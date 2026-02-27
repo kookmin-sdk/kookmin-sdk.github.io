@@ -9,7 +9,7 @@ category: Main
 
 ## **박지우 (Jiwoo Park)**
 
-![Profile](/assets/img/logo/profile.jpg){: style="width: 200px; height: 200px; border-radius: 10px; display: block; margin: 20px auto;"}
+![Profile](/assets/img/logo/profile.jpg){: style=" height: 200px; border-radius: 10px; display: block; margin: 20px auto;"}
 
 ### 학력
 
