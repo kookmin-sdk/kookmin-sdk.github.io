@@ -88,9 +88,9 @@ llama.cpp는 별도의 딥러닝 프레임워크 없이 순수 C/C++로 구현�
 Transformer는 대규모 언어 모델의 근간을 이루는 딥러닝 모델 아키텍처로서, 인코더-디코더 구조와 셀프 어텐션 메커니즘을 특징으로 합니다.  
 그림 1은 Transformer의 전형적인 아키텍처를 보여줍니다. 왼쪽은 인코더 블록을, 오른쪽은 디코더 블록을 나타내며, 각 블록은 여러 층(layer)의 반복으로 구성됩니다.  
 
-> **그림 1: Transformer 디코더 블록의 구조 예시**  
+> **그림 1: Transformer 디코더 블록의 구조 예시**
 
-<!-- ![Transformer Decoder Architecture](/assets/img/decoder.png) -->
+![Transformer Decoder Architecture](/assets/img/logo/decoder.png){: style="width: 100%; max-width: 600px; display: block; margin: 20px auto; border-radius: 8px;" }
 
 각 층은 두 개의 서브층(sub-layer)으로 나뉘는데, 첫 번째 서브층은 멀티-헤드 어텐션이고 두 번째 서브층은 피드포워드 신경망(FFN)으로 이루어집니다.  
 각 서브층 출력에는 잔차 연결(residual connection)이 적용되고, 그 뒤에 레이어 정규화(layer normalization)가 따라붙는 구조가 사용됩니다.  
