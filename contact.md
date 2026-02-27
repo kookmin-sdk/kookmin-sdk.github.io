@@ -5,48 +5,48 @@ order: 5
 category: Main
 ---
 
-# Contact Us
+# 문의하기
 
-## Quick Contact Information
+## 빠른 연락처 정보
 
-**Jiwoo Park**
-- **Email:** jiwoo.park@kookmin.ac.kr
-- **Affiliation:** SCRC, Graduate School of Software Convergence, Kookmin University
+**박지우**
+- **이메일:** jiwoo.park@kookmin.ac.kr
+- **소속:** SCRC, 국민대학교 소프트웨어수렴대학원
 
-## Laboratory Contact
+## 연구실 연락처
 
-**Special Communication & Robotics Research Center (SCRC)**
-- **Phone:** +82-2-910-xxxx (check official site for exact number)
-- **Office:** Kookmin University, Software Convergence Building
-- **Website:** [https://scrc.kookmin.ac.kr](https://scrc.kookmin.ac.kr)
-- **Location:** Seoul, South Korea
+**특수통신로봇연구센터 (SCRC)**
+- **전화:** +82-2-910-xxxx (정확한 번호는 공식 사이트 참고)
+- **사무실:** 국민대학교 소프트웨어수렴관
+- **웹사이트:** [https://scrc.kookmin.ac.kr](https://scrc.kookmin.ac.kr)
+- **위치:** 서울, 대한민국
 
-## Contact Form
+## 이메일 문의
 
-For general inquiries, research collaborations, or project discussions, please send an email with:
+일반적인 문의, 연구 협력, 프로젝트 논의 등을 위해 다음 내용을 포함하여 이메일을 보내주세요:
 
-1. **Your Name & Affiliation**
-2. **Subject of Inquiry**
-3. **Brief Description of Your Interest**
-4. **Preferred Contact Method**
+1. **성명 & 소속**
+2. **문의 주제**
+3. **관심사에 대한 간단한 설명**
+4. **선호하는 연락 방법**
 
-## Collaboration
+## 협력 분야
 
-We are open to:
-- Research collaborations
-- Joint projects in communication networks and edge AI
-- Guest lectures and seminars
-- Student internships
-
----
-
-## Department & University
-
-**Kookmin University**
-- Graduate School of Software Convergence
-- Location: 77 Jeongneung-ro, Seongbuk-gu, Seoul 02707, South Korea
-- [Official University Website](https://www.kookmin.ac.kr)
+우리는 다음 분야의 협력에 열려있습니다:
+- 연구 협력
+- 통신 네트워크 및 엣지 AI 분야 공동 프로젝트
+- 초청 강연 및 세미나
+- 학생 인턴십 프로그램
 
 ---
 
-*Thank you for your interest in our research. We look forward to hearing from you!*
+## 국민대학교
+
+**국민대학교**
+- 소프트웨어수렴대학원
+- 주소: 서울시 성북구 정릉로 77, 02707
+- [국민대학교 공식 웹사이트](https://www.kookmin.ac.kr)
+
+---
+
+*우리의 연구에 관심을 가져주셔서 감사합니다. 여러분의 연락을 기다리고 있습니다!*

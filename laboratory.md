@@ -5,45 +5,45 @@ order: 2
 category: Main
 ---
 
-# Special Communication & Robotics Research Center (SCRC)
+# 특수통신로봇연구센터 (SCRC)
 
-## Overview
+## 개요
 
-The Special Communication & Robotics Research Center (SCRC) is located at **Kookmin University** in Seoul, South Korea. We focus on developing communication technologies and intelligent systems for challenging and resource-constrained environments.
+특수통신로봇연구센터(Special Communication & Robotics Research Center, SCRC)는 서울 국민대학교에 위치한 연구 기관입니다. 우리는 도전적이고 자원 제약이 있는 환경에서의 통신 기술 및 지능형 시스템 개발에 집중하고 있습니다.
 
-## Research Areas
+## 연구 분야
 
-### 1. Special Communication Networks
-- Underwater acoustic communication systems
-- Polar region wireless networks for extreme environments
-- Aerial mesh networking and UAV communications
-- Satellite communication optimization
+### 1. 특수통신네트워크
+- 수중 음향 통신 시스템
+- 극한 환경 극지 무선통신 네트워크
+- 항공 메시 네트워킹 및 무인항공기(UAV) 통신
+- 위성 통신 최적화
 
-### 2. Edge AI & Lightweight Models
-- Small Language Models (SLM) for edge devices
-- Efficient LLM deployment on IoT and embedded systems
-- Model compression and quantization techniques
-- Real-time inference optimization
+### 2. 엣지 AI & 경량 모델
+- 엣지 디바이스를 위한 소형 언어모델(SLM)
+- IoT 및 임베디드 시스템에서의 효율적 LLM 배포
+- 모델 압축 및 양자화 기법
+- 실시간 추론 최적화
 
-### 3. System Integration
-- End-to-end system design and implementation
-- Hardware-software co-design
-- Performance analysis and optimization
-- Practical deployment in field conditions
+### 3. 시스템 통합
+- 엔드-투-엔드 시스템 설계 및 구현
+- 하드웨어-소프트웨어 공동 설계
+- 성능 분석 및 최적화
+- 현장 조건에서의 실전 배포
 
-## Facilities
+## 연구 시설
 
-- Computing Laboratory with GPUs for model training and optimization
-- Network simulation and test environment
-- Prototyping and integration lab
+- 모델 훈련 및 최적화를 위한 GPU 컴퓨팅 랩
+- 네트워크 시뮬레이션 및 테스트 환경
+- 프로토타입 개발 및 통합 랩
 
-## Official Website
+## 공식 웹사이트
 
-🌐 [Visit SCRC Official Site](https://scrc.kookmin.ac.kr)
+🌐 [SCRC 공식 사이트 방문](https://scrc.kookmin.ac.kr)
 
-## Location
+## 위치
 
-**Kookmin University**  
-Seongbuk-gu, Seoul, South Korea
+**국민대학교**  
+서울 성북구, 한국
 
-Graduate School of Software Convergence
+소프트웨어수렴대학원

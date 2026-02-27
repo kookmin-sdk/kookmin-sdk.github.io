@@ -1,18 +1,25 @@
 /**
  * Auto Translation Feature
- * Enables automatic translation of Korean content to English using MyMemory Translation API
+ * Enables automatic translation of Korean content to English and vice versa
+ * Currently uses MyMemory API (free, no key required)
  * 
- * Usage:
- * - Add data-translatable="true" to elements you want to translate
- * - Add a button with id="toggle-translation" to trigger translation
+ * For better translation quality, you can upgrade to Google Translate API:
+ * - Get API key from: https://cloud.google.com/docs/authentication/getting-started
+ * - Update the translateWithGoogle function below
+ * - Set USE_GOOGLE_TRANSLATE = true
  */
+
+const USE_GOOGLE_TRANSLATE = false;  // Change to true if using Google Translate API
+const GOOGLE_API_KEY = 'YOUR_GOOGLE_API_KEY';  // Replace with your actual API key
 
 class PageTranslator {
     constructor() {
         this.currentLanguage = 'ko';
         this.translations = new Map();
-        this.translationApiUrl = 'https://api.mymemory.translated.net/get';
+        this.mymemoryApiUrl = 'https://api.mymemory.translated.net/get';
+        this.googleApiUrl = 'https://translation.googleapis.com/language/translate/v2';
         this.setupTranslationButton();
+        this.observePageChanges();
     }
 
     setupTranslationButton() {
@@ -23,11 +30,12 @@ class PageTranslator {
             btn.id = 'toggle-translation';
             btn.className = 'translation-toggle';
             btn.innerHTML = '🌐 English';
+            btn.title = 'Click to toggle between Korean and English';
             btn.style.cssText = `
                 position: fixed;
                 top: 80px;
                 right: 20px;
-                padding: 8px 16px;
+                padding: 10px 18px;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 color: white;
                 border: none;
@@ -38,6 +46,7 @@ class PageTranslator {
                 font-weight: 500;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.2);
                 transition: all 0.3s ease;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             `;
             
             btn.addEventListener('mouseover', () => {
@@ -59,7 +68,7 @@ class PageTranslator {
     toggleLanguage() {
         if (this.currentLanguage === 'ko') {
             this.currentLanguage = 'en';
-            this.translatePage();
+            this.translatePage('ko', 'en');
             document.getElementById('toggle-translation').innerHTML = '🇰🇷 한국어';
         } else {
             this.currentLanguage = 'ko';
@@ -68,26 +77,60 @@ class PageTranslator {
         }
     }
 
-    async translatePage() {
-        const elements = document.querySelectorAll('[data-translatable="true"], .post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content li');
+    async translatePage(sourceLang, targetLang) {
         const btn = document.getElementById('toggle-translation');
         btn.disabled = true;
-        btn.innerHTML = '⏳ Translating...';
+        btn.innerHTML = '⏳ 번역 중...';
+
+        // Target elements for translation
+        const selectors = [
+            '#libdoc-page-title',
+            '#libdoc-content h1',
+            '#libdoc-content h2',
+            '#libdoc-content h3',
+            '#libdoc-content h4',
+            '#libdoc-content p',
+            '#libdoc-content li',
+            '#libdoc-content td',
+            '#libdoc-content th',
+            '.post-content'
+        ];
+
+        const elements = document.querySelectorAll(selectors.join(', '));
+        let translatedCount = 0;
 
         for (const element of elements) {
-            if (element.dataset.originalText) {
-                continue; // Already translated
+            // Skip code blocks and script tags
+            if (element.tagName === 'CODE' || element.tagName === 'SCRIPT' || element.tagName === 'STYLE') {
+                continue;
             }
 
-            const text = element.innerText;
-            if (text.length > 0 && !this.isEnglish(text)) {
+            // Get text content, excluding child elements
+            let text = element.textContent?.trim();
+            
+            if (text && text.length > 0 && !this.isEnglish(text) && !element.dataset.originalText) {
                 try {
                     element.dataset.originalText = text;
-                    const translatedText = await this.translateText(text, 'ko', 'en');
-                    element.innerText = translatedText;
+                    
+                    if (USE_GOOGLE_TRANSLATE) {
+                        var translatedText = await this.translateWithGoogle(text, targetLang);
+                    } else {
+                        var translatedText = await this.translateText(text, sourceLang, targetLang);
+                    }
+                    
+                    // Only update if translation was successful and different
+                    if (translatedText && translatedText !== text) {
+                        element.textContent = translatedText;
+                        translatedCount++;
+                    }
                 } catch (error) {
-                    console.error('Translation error:', error);
+                    console.error('Translation error for:', text, error);
                 }
+            }
+
+            // Add small delay to avoid rate limiting
+            if (translatedCount % 5 === 0) {
+                await new Promise(resolve => setTimeout(resolve, 100));
             }
         }
 
@@ -98,14 +141,15 @@ class PageTranslator {
     restoreOriginal() {
         const elements = document.querySelectorAll('[data-original-text]');
         elements.forEach(element => {
-            element.innerText = element.dataset.originalText;
-            delete element.dataset.originalText;
+            if (element.dataset.originalText) {
+                element.textContent = element.dataset.originalText;
+            }
         });
     }
 
     async translateText(text, sourceLang, targetLang) {
         // Use caching to avoid hitting API limits
-        const cacheKey = `${sourceLang}-${targetLang}-${text.substring(0, 50)}`;
+        const cacheKey = `${sourceLang}-${targetLang}-${text.substring(0, 100)}`;
         
         if (this.translations.has(cacheKey)) {
             return this.translations.get(cacheKey);
@@ -113,59 +157,92 @@ class PageTranslator {
 
         try {
             const response = await fetch(
-                `${this.translationApiUrl}?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
+                `${this.mymemoryApiUrl}?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
                 { method: 'GET' }
             );
 
             const data = await response.json();
 
-            if (data.responseStatus === 200) {
+            if (data.responseStatus === 200 && data.responseData.translatedText) {
                 const translatedText = data.responseData.translatedText;
                 this.translations.set(cacheKey, translatedText);
                 return translatedText;
             } else {
-                console.error('Translation API error:', data);
+                console.warn('Translation API response:', data);
                 return text;
             }
         } catch (error) {
-            console.error('Translation fetch error:', error);
+            console.error('MyMemory API error:', error);
             return text;
+        }
+    }
+
+    async translateWithGoogle(text, targetLanguage) {
+        // For production, use official Google Cloud Translation API
+        // This requires authentication and API key setup
+        
+        // Fallback to MyMemory if API key not set
+        if (!GOOGLE_API_KEY || GOOGLE_API_KEY === 'YOUR_GOOGLE_API_KEY') {
+            return await this.translateText(text, 'ko', targetLanguage);
+        }
+
+        try {
+            const response = await fetch(this.googleApiUrl, {
+                method: 'POST',
+                body: JSON.stringify({
+                    q: text,
+                    target: targetLanguage,
+                    source: 'ko',
+                    key: GOOGLE_API_KEY
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            const data = await response.json();
+            
+            if (data.data && data.data.translations && data.data.translations[0]) {
+                return data.data.translations[0].translatedText;
+            } else {
+                console.warn('Google Translate error:', data);
+                return text;
+            }
+        } catch (error) {
+            console.error('Google Translate API error:', error);
+            // Fallback to MyMemory
+            return await this.translateText(text, 'ko', targetLanguage);
         }
     }
 
     isEnglish(text) {
         // Check if text contains mostly English characters
-        const englishRegex = /[a-zA-Z0-9]/g;
-        const matches = text.match(englishRegex) || [];
-        return matches.length > text.length * 0.5;
+        // Korean Hangul characters: \uac00-\ud7a3
+        const koreanRegex = /[\uac00-\ud7a3]/g;
+        const koreanMatches = text.match(koreanRegex) || [];
+        
+        // If more than 30% Korean characters, it's Korean
+        return koreanMatches.length < text.length * 0.3;
+    }
+
+    observePageChanges() {
+        // If page content changes dynamically, update translator
+        const observer = new MutationObserver(() => {
+            // Could refresh translator state here if needed
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     }
 }
 
 // Initialize translator when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.pageTranslator = new PageTranslator();
+    });
+} else {
     window.pageTranslator = new PageTranslator();
-});
-
-/**
- * Alternative: Using Google Translate API (requires API key)
- * 
- * For production use with more accuracy, consider using Google Cloud Translation API:
- * 
- * async function translateWithGoogle(text, targetLanguage) {
- *     const apiKey = 'YOUR_GOOGLE_API_KEY';
- *     const response = await fetch('https://translation.googleapis.com/language/translate/v2', {
- *         method: 'POST',
- *         body: JSON.stringify({
- *             q: text,
- *             target: targetLanguage,
- *             key: apiKey
- *         }),
- *         headers: {
- *             'Content-Type': 'application/json',
- *         }
- *     });
- *     
- *     const data = await response.json();
- *     return data.data.translations[0].translatedText;
- * }
- */
+}

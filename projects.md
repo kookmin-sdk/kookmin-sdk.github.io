@@ -5,42 +5,42 @@ order: 4
 category: Main
 ---
 
-# Ongoing & Past Projects
+# 진행 중인 & 과거 프로젝트
 
-## Current Projects
+## 현재 진행 중인 프로젝트
 
-### Edge AI for Resource-Constrained Networks
-**Duration:** 2025 - Present  
-**Goal:** Develop and deploy lightweight language models for real-time communication in resource-constrained edge environments.
+### 자원 제약 네트워크를 위한 엣지 AI
+**기간:** 2025년 ~ 현재  
+**목표:** 자원 제약 엣지 환경에서의 실시간 통신을 위한 경량 언어모델 개발 및 배포
 
-**Key Objectives:**
-- Design efficient SLM architectures for edge devices
-- Optimize inference latency and memory footprint
-- Practical deployment in real network conditions
+**주요 목표:**
+- 엣지 디바이스를 위한 효율적 SLM 아키텍처 설계
+- 추론 지연 및 메모리 최적화
+- 실제 네트워크 조건에서의 실전 배포
 
-**Status:** Active Research
+**상태:** 진행 중
 
-### Underwater Communication System Optimization
-**Duration:** 2024 - Present  
-**Goal:** Enhance acoustic communication reliability and data transmission rates in underwater networks.
+### 수중 통신 시스템 최적화
+**기간:** 2024년 ~ 현재  
+**목표:** 수중 네트워크에서의 음향 통신 신뢰성 및 데이터 전송률 향상
 
-**Key Focus Areas:**
-- Channel modeling in harsh aquatic environments
-- Signal processing optimization
-- Protocol design for unreliable channels
+**주요 초점:**
+- 극한 수중 환경에서의 채널 모델링
+- 신호 처리 최적화
+- 신뢰성 낮은 채널을 위한 프로토콜 설계
 
-**Status:** In Development
+**상태:** 개발 중
 
-## Past Projects
+## 과거 프로젝트
 
-- AI-based network anomaly detection
-- Wireless mesh network performance analysis
-- IoT sensor network optimization
+- AI 기반 네트워크 이상 탐지
+- 무선 메시 네트워크 성능 분석
+- IoT 센서 네트워크 최적화
 
 ---
 
-## Project Opportunities
+## 프로젝트 협력 기회
 
-If you're interested in collaborating on these projects or have related research interests, please [contact us](/contact/).
+이 프로젝트들에 협력하거나 관련 연구 관심이 있으시면 [문의](/contact/)해주세요.
 
-For detailed updates, follow our [Research Posts](/research-posts/).
+자세한 업데이트는 [연구 포스팅](/research-posts/)을 참고하세요.

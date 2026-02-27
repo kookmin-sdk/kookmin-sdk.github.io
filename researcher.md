@@ -5,34 +5,34 @@ order: 1
 category: Main
 ---
 
-# Researcher Profile
+# 연구원 프로필
 
-## **Jiwoo Park**
+## **박지우 (Jiwoo Park)**
 
-### Education
+### 학력
 
-**Master's Course**
-- B.S. in Computer Science
-  - Korea National Open University (Completed)
+**석사과정**
+- 학사 (컴퓨터과학)
+  - 한국방송통신대학교 (완료)
 
-- M.S. in Artificial Intelligence Applications
-  - Graduate School of Software Convergence, Kookmin University
-  - Duration: 2025–Present
+- 석사 (인공지능응용)
+  - 국민대학교 소프트웨어수렴대학원
+  - 재학 기간: 2025년 3월 ~ 현재
 
-### Research Interests
+### 연구관심사
 
-- **Special communication networks** - underwater networks, polar region networks, aerial mesh networks
-- **Edge AI and lightweight models** - Small Language Models (SLM) and efficient Large Language Models (LLM) for resource-constrained communication environments
-- **System-level optimization** - Implementation and optimization strategies for edge AI in real-world communication systems
+- **특수통신네트워크** - 수중통신, 극지 무선통신, 항공 메시 네트워크
+- **엣지 AI 및 경량 모델** - 자원 제약 통신 환경을 위한 소형 언어모델(SLM) 및 효율적 대규모 언어모델(LLM)
+- **시스템 레벨 최적화** - 실제 통신 시스템에서의 엣지 AI 구현 및 최적화 전략
 
-### Skills
+### 기술 스택
 
-- Programming Languages: Python, C, C++, Java, JavaScript
-- AI/ML: PyTorch, TensorFlow, Model compression techniques
-- Communication Systems: Network protocols, wireless communication
-- Tools: Linux, Git, Docker, Jupyter Notebooks
+- **프로그래밍 언어:** Python, C, C++, Java, JavaScript
+- **AI/ML:** PyTorch, TensorFlow, 모델 압축 기술
+- **통신 시스템:** 네트워크 프로토콜, 무선통신
+- **개발 도구:** Linux, Git, Docker, Jupyter Notebooks
 
-### Contact
+### 연락처
 
-📧 Email: jiwoo.park@kookmin.ac.kr  
-🔗 [Research Lab Official Site](https://scrc.kookmin.ac.kr)
+📧 이메일: jiwoo.park@kookmin.ac.kr  
+🔗 [연구실 공식 사이트](https://scrc.kookmin.ac.kr)
