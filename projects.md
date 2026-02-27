@@ -33,7 +33,7 @@ category: Main
 </p>
 
 ### Database
-Oracle / Tibero / MySQL
+`Oracle` / `Tibero` / `MySQL`
 
 ### Dev / Infra
 <p>
@@ -63,7 +63,11 @@ Rust 중심으로 구성한 로컬 LLM 실행 런타임 프로젝트입니다.
 #### 상태
 기본 실행 파이프라인을 구현했으며, 안정화와 기능 확장을 진행 중입니다.
 
----
+**Repo:**  
+`https://github.com/Azabell1993/llmrc`  
+
+
+---  
 
 ### QT_Kernel_OS
 Qt/C++ 기반으로 운영체제 구조와 동작 원리를 이해하기 위한 CLI 학습 프로젝트입니다.
@@ -74,7 +78,7 @@ Qt/C++ 기반으로 운영체제 구조와 동작 원리를 이해하기 위한 
 - 커널 구조 이해를 위한 실험 환경 제작
 
 **Demo:**  
-https://azabell1993.github.io/QT_Kernel_OS/files.html
+`https://azabell1993.github.io/QT_Kernel_OS/files.html`  
 
 ---
 
@@ -85,7 +89,10 @@ C++과 LibTorch를 사용하여 로컬 모델을 로딩하고 API 형태로 제�
 - 모델 로딩 및 추론 파이프라인 구현  
 - 경량 REST 서버 구성  
 - GGUF 및 llama.cpp 연동 실험
-
+  
+**Repo:**  
+`https://github.com/Azabell1993/ml-engine`    
+  
 ---
 
 ## Interests
