@@ -15,7 +15,7 @@ category: Main
 
 ## 연구실 연락처
 
-**특수통신로봇연구센터 (SCRC)**
+**특수통신융합서비스연구센터 (SCRC)**
 - **전화:** +82-2-910-xxxx (정확한 번호는 공식 사이트 참고)
 - **사무실:** 국민대학교 소프트웨어수렴관
 - **웹사이트:** [https://scrc.kookmin.ac.kr](https://scrc.kookmin.ac.kr)

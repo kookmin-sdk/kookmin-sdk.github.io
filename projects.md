@@ -9,38 +9,89 @@ category: Main
 
 ## 현재 진행 중인 프로젝트
 
-### 자원 제약 네트워크를 위한 엣지 AI
-**기간:** 2025년 ~ 현재  
-**목표:** 자원 제약 엣지 환경에서의 실시간 통신을 위한 경량 언어모델 개발 및 배포
+### SCRC 연구실 프로젝트
 
-**주요 목표:**
-- 엣지 디바이스를 위한 효율적 SLM 아키텍처 설계
-- 추론 지연 및 메모리 최적화
-- 실제 네트워크 조건에서의 실전 배포
-
-**상태:** 진행 중
-
-### 수중 통신 시스템 최적화
-**기간:** 2024년 ~ 현재  
-**목표:** 수중 네트워크에서의 음향 통신 신뢰성 및 데이터 전송률 향상
-
-**주요 초점:**
-- 극한 수중 환경에서의 채널 모델링
-- 신호 처리 최적화
-- 신뢰성 낮은 채널을 위한 프로토콜 설계
-
-**상태:** 개발 중
-
-## 과거 프로젝트
-
-- AI 기반 네트워크 이상 탐지
-- 무선 메시 네트워크 성능 분석
-- IoT 센서 네트워크 최적화
+준비 중입니다.
 
 ---
 
-## 프로젝트 협력 기회
+## Tech Stack
 
-이 프로젝트들에 협력하거나 관련 연구 관심이 있으시면 [문의](/contact/)해주세요.
+### Languages
+<p>
+  <img src="https://skillicons.dev/icons?i=cpp,c,java,php,python,bash,rust" />
+</p>
 
-자세한 업데이트는 [연구 포스팅](/research-posts/)을 참고하세요.
+### Backend / Framework
+<p>
+  <img src="https://skillicons.dev/icons?i=spring" />
+</p>
+
+### Systems / Runtime
+<p>
+  <img src="https://skillicons.dev/icons?i=linux,cmake" />
+</p>
+
+### Database
+Oracle / Tibero / MySQL
+
+### Dev / Infra
+<p>
+  <img src="https://skillicons.dev/icons?i=git,docker" />
+</p>
+
+---
+
+## Side Projects
+
+### llmrc
+Rust 중심으로 구성한 로컬 LLM 실행 런타임 프로젝트입니다.  
+양자화된 GGUF 모델을 로드하고 C++ 애플리케이션과 연동하여 추론을 제공하는 구조를 구현하고 있습니다.
+
+#### 주요 내용
+- Rust 기반 모델 로딩 및 런타임 관리  
+- GGUF 포맷 처리  
+- FFI를 통한 C++ 연동  
+- HTTP 기반 추론 인터페이스  
+- macOS / Linux 빌드 및 실행 환경 구성
+
+#### 목표
+- 로컬 환경에서 재현 가능한 LLM 실행 구조 확립  
+- 언어 간 책임 분리를 통한 확장 가능한 아키텍처 구성  
+- 서비스로 연결 가능한 런타임 기반 확보
+
+#### 상태
+기본 실행 파이프라인을 구현했으며, 안정화와 기능 확장을 진행 중입니다.
+
+---
+
+### QT_Kernel_OS
+Qt/C++ 기반으로 운영체제 구조와 동작 원리를 이해하기 위한 CLI 학습 프로젝트입니다.
+
+#### 내용
+- 콘솔 인터페이스 설계  
+- 프로세스 / 메모리 / 파일 시스템 개념 구현  
+- 커널 구조 이해를 위한 실험 환경 제작
+
+**Demo:**  
+https://azabell1993.github.io/QT_Kernel_OS/files.html
+
+---
+
+### ml-engine
+C++과 LibTorch를 사용하여 로컬 모델을 로딩하고 API 형태로 제공하는 추론 환경을 구성하는 프로젝트입니다.
+
+#### 내용
+- 모델 로딩 및 추론 파이프라인 구현  
+- 경량 REST 서버 구성  
+- GGUF 및 llama.cpp 연동 실험
+
+---
+
+## Interests
+
+- On-device AI  
+- Local LLM Runtime  
+- Inference Architecture  
+- System Performance  
+- Language Interoperability (Rust ↔ C++)
