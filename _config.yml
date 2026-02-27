@@ -42,8 +42,8 @@ metadata:
 sidebar:
     disable_search: false
     logo:
-        url: /assets/libdoc/img/favicon/favicon-32x32.png
-        max_height: 40px
+        url: /assets/img/logo/scrc-logo.png
+        max_height: 50px
     additional_links:
         -   url: https://scrc.kookmin.ac.kr
             title: SCRC Main Lab
