@@ -10,7 +10,7 @@ category: Main
 ## 빠른 연락처 정보
 
 **박지우**
-- **이메일:** jiwoo.park@kookmin.ac.kr
+- **이메일:** jiwoo93@kookmin.ac.kr
 - **소속:** SCRC, 국민대학교 소프트웨어융합대학원
 
 ## 연구실 연락처
