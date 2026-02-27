@@ -27,12 +27,12 @@ category: Main
 
 ### 기술 스택
 
-- **프로그래밍 언어:** Python, C, C++, Java, JavaScript
-- **AI/ML:** PyTorch, TensorFlow, 모델 압축 기술
+- **프로그래밍 언어:** C, C++, PHP, Python, PHP, Java, JavaScript
+- **AI/ML:** PyTorch, TensorFlow
 - **통신 시스템:** 네트워크 프로토콜, 무선통신
 - **개발 도구:** Linux, Git, Docker, Jupyter Notebooks
 
 ### 연락처
 
-📧 이메일: jiwoo.park@kookmin.ac.kr  
+📧 이메일: jiwoo93@kookmin.ac.kr  
 🔗 [연구실 공식 사이트](https://scrc.kookmin.ac.kr)
